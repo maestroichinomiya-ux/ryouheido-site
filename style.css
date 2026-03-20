@@ -1804,3 +1804,195 @@ a.online-link-card p {
     display: none;
   }
 }
+
+/* ===== 体験・イベントページ ===== */
+.event-section {
+  margin-bottom: 80px;
+}
+
+.event-season-badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 14px;
+  background: var(--clr-green);
+  color: var(--clr-white);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+.event-season-badge.season {
+  background: var(--clr-kuri);
+}
+
+.event-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+.event-key-info {
+  background: var(--clr-washi);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 8px;
+}
+.event-key-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(122,82,32,0.1);
+  align-items: start;
+  font-size: 13px;
+}
+.event-key-item:last-child { border-bottom: none; }
+.event-key-label {
+  color: var(--clr-kuri-mid);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  padding-top: 2px;
+}
+.event-key-value {
+  color: var(--clr-ink-mid);
+  font-weight: 500;
+  line-height: 1.6;
+}
+.event-key-value small {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--clr-ink-light);
+}
+
+.event-photo-placeholder {
+  background: var(--clr-washi);
+  border-radius: var(--radius-md);
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 48px;
+  border: 1.5px dashed rgba(122,82,32,0.2);
+}
+.event-photo-note {
+  font-size: 12px;
+  color: var(--clr-ink-light);
+  letter-spacing: 0.05em;
+}
+
+.event-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.event-detail-card {
+  background: var(--clr-white);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-sm);
+  border-top: 2px solid var(--clr-green);
+}
+.event-detail-icon {
+  font-family: var(--font-serif-en);
+  font-size: 28px;
+  font-style: italic;
+  color: var(--clr-kuri-pale);
+  margin-bottom: 14px;
+  letter-spacing: 0.05em;
+}
+.event-detail-card h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--clr-green);
+  margin-bottom: 10px;
+  letter-spacing: 0.06em;
+}
+.event-detail-card p {
+  font-size: 13px;
+  color: var(--clr-ink-light);
+  line-height: 1.9;
+}
+
+.event-notes {
+  background: var(--clr-washi);
+  border-radius: var(--radius-md);
+  padding: 32px 36px;
+  margin-bottom: 40px;
+}
+.event-notes h3 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--clr-kuri);
+  margin-bottom: 16px;
+  letter-spacing: 0.06em;
+}
+.event-notes ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.event-notes li {
+  font-size: 13px;
+  color: var(--clr-ink-mid);
+  line-height: 1.8;
+  padding-left: 18px;
+  position: relative;
+}
+.event-notes li::before {
+  content: '―';
+  position: absolute;
+  left: 0;
+  color: var(--clr-kuri-light);
+  font-size: 11px;
+}
+
+.event-cta {
+  text-align: center;
+  padding: 48px 0 0;
+}
+.event-reserve-btn {
+  font-size: 15px !important;
+  padding: 18px 48px !important;
+  display: inline-block;
+  text-decoration: none;
+}
+.event-cta-note {
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--clr-ink-light);
+  letter-spacing: 0.05em;
+}
+
+.event-divider {
+  border: none;
+  border-top: 1px solid rgba(122,82,32,0.12);
+  margin: 80px 0;
+  position: relative;
+}
+.event-divider::after {
+  content: '◆';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--clr-bg);
+  padding: 0 16px;
+  color: var(--clr-kuri-pale);
+  font-size: 10px;
+}
+
+@media (max-width: 1024px) {
+  .event-header { grid-template-columns: 1fr; gap: 32px; }
+  .event-detail-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .event-notes { padding: 24px 20px; }
+  .event-cta { padding-top: 32px; }
+  .event-reserve-btn { padding: 14px 32px !important; }
+}
