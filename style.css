@@ -1449,3 +1449,99 @@ ul { list-style: none; }
 .product-item:hover .product-item-img img {
   transform: scale(1.04);
 }
+
+/* ===== カフェバナー 写真背景 ===== */
+.cafe-banner {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+}
+
+.cafe-banner-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.cafe-banner-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+.cafe-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10,7,3,0.72) 0%,
+    rgba(10,7,3,0.5) 50%,
+    rgba(10,7,3,0.2) 100%
+  );
+}
+
+.cafe-banner-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 60px;
+  width: 100%;
+}
+.cafe-banner-text {
+  max-width: 560px;
+}
+
+/* ===== カフェ テラス席 写真 ===== */
+.cafe-terrace-photo {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 40px;
+  height: 340px;
+}
+.cafe-terrace-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== 店舗写真 ===== */
+.shop-map-placeholder.shop-photo {
+  height: 400px;
+  overflow: hidden;
+}
+.shop-map-placeholder.shop-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ===== コンセプト写真（暖簾） ===== */
+.concept-img-main img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ===== 会社概要 外観写真 ===== */
+.about-img-placeholder img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+
+/* ===== カフェメニュー写真 ===== */
+.cafe-menu-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
