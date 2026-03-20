@@ -1996,3 +1996,245 @@ a.online-link-card p {
   .event-cta { padding-top: 32px; }
   .event-reserve-btn { padding: 14px 32px !important; }
 }
+
+/* ===== 体験ページ リデザイン ===== */
+.ev-content {
+  max-width: 760px !important;
+  margin: 0 auto !important;
+}
+
+.ev-article {
+  padding: 80px 0;
+}
+
+.ev-label-row {
+  margin-bottom: 20px;
+}
+
+.ev-badge {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  padding: 4px 16px;
+  border: 1px solid var(--clr-green);
+  color: var(--clr-green);
+  border-radius: var(--radius-full);
+}
+.ev-badge.autumn {
+  border-color: var(--clr-kuri);
+  color: var(--clr-kuri);
+}
+
+.ev-title {
+  font-family: var(--font-serif-jp);
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--clr-ink);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.ev-lead {
+  font-size: 15px;
+  color: var(--clr-ink-light);
+  line-height: 2.1;
+  margin-bottom: 48px;
+}
+
+.ev-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(122,82,32,0.12);
+  margin-bottom: 40px;
+}
+.ev-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(122,82,32,0.12);
+}
+.ev-spec-item:nth-child(odd) { padding-right: 40px; }
+.ev-spec-item:nth-child(even) { padding-left: 40px; border-left: 1px solid rgba(122,82,32,0.12); }
+.ev-spec-item span {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--clr-kuri-mid);
+}
+.ev-spec-item strong {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--clr-ink);
+  letter-spacing: 0.04em;
+}
+
+.ev-photo-block {
+  margin-bottom: 48px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 16/7;
+}
+.ev-photo-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ev-note {
+  border-left: 2px solid var(--clr-kuri-pale);
+  padding: 4px 0 4px 24px;
+  margin-bottom: 48px;
+}
+.ev-note p {
+  font-size: 13px;
+  color: var(--clr-ink-light);
+  line-height: 2;
+}
+
+.ev-cta-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: var(--clr-kuri);
+  color: var(--clr-white);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  border-radius: var(--radius-full);
+  font-family: var(--font-serif-jp);
+  cursor: pointer;
+  border: 1.5px solid var(--clr-kuri);
+  text-decoration: none;
+  transition: all var(--duration);
+  box-shadow: 0 4px 16px rgba(122,82,32,0.22);
+}
+.ev-cta-btn:hover {
+  background: var(--clr-kuri-mid);
+  transform: translateY(-2px);
+}
+.ev-cta-btn.outline {
+  background: transparent;
+  color: var(--clr-kuri);
+  box-shadow: none;
+}
+.ev-cta-btn.outline:hover {
+  background: var(--clr-kuri);
+  color: var(--clr-white);
+  transform: translateY(-2px);
+}
+
+.ev-rule {
+  border: none;
+  border-top: 1px solid rgba(122,82,32,0.12);
+  margin: 0;
+}
+
+/* ===== トップページ 体験2カード ===== */
+.top-experience {
+  background: var(--clr-white);
+  padding: 100px 0;
+}
+.top-experience-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+.top-experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 56px;
+}
+
+.top-exp-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--clr-washi);
+  cursor: pointer;
+  transition: transform var(--duration), box-shadow var(--duration);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+.top-exp-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.top-exp-card-photo {
+  height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.top-exp-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+.top-exp-card:hover .top-exp-card-photo img {
+  transform: scale(1.04);
+}
+.top-exp-card-body {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.top-exp-badge {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 3px 12px;
+  border: 1px solid var(--clr-green);
+  color: var(--clr-green);
+  border-radius: var(--radius-full);
+  margin-bottom: 14px;
+  width: fit-content;
+}
+.top-exp-badge.autumn {
+  border-color: var(--clr-kuri);
+  color: var(--clr-kuri);
+}
+.top-exp-card-body h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--clr-ink);
+  margin-bottom: 12px;
+  letter-spacing: 0.06em;
+}
+.top-exp-card-body p {
+  font-size: 13px;
+  color: var(--clr-ink-light);
+  line-height: 1.9;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.top-exp-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.top-exp-meta span {
+  font-size: 11px;
+  color: var(--clr-kuri-mid);
+  background: rgba(122,82,32,0.08);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+}
+.top-exp-link {
+  font-size: 12px;
+  color: var(--clr-kuri);
+  letter-spacing: 0.05em;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .ev-specs { grid-template-columns: 1fr; }
+  .ev-spec-item:nth-child(even) { padding-left: 0; border-left: none; }
+  .top-experience-grid { grid-template-columns: 1fr; }
+  .top-experience-inner { padding: 0 20px; }
+  .ev-content { padding: 40px 20px 80px !important; }
+}

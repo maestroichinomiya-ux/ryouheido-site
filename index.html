@@ -221,30 +221,45 @@
       </div>
     </section>
 
-    <!-- 栗拾い体験 -->
-    <section class="experience-section" style="display:grid;grid-template-columns:1fr 1fr;min-height:520px;overflow:hidden;">
-      <div class="experience-photo" style="overflow:hidden;min-height:400px;">
-        <img src="kurihiroi.png" alt="良平堂 栗拾い体験" style="width:100%;height:100%;object-fit:cover;display:block;">
-      </div>
-      <div class="experience-content" style="background:#f2ebe0;padding:72px 64px;display:flex;flex-direction:column;justify-content:center;">
-        <p class="section-label">Seasonal Experience</p>
-        <h2 class="section-title">栗拾い体験<br><span class="experience-season">秋季限定</span></h2>
-        <p class="section-body">良平堂の栗畑で、実際に栗を拾う秋の体験プログラム。拾った栗を含めた約1kg分（1,500円相当）のお土産栗をお持ち帰りいただけます。就労継続支援施設との共同運営で、参加費の一部は地域の福祉活動にも役立てられています。</p>
-        <div class="experience-meta">
-          <div class="experience-meta-item">
-            <span class="meta-label">開催時期</span>
-            <span class="meta-value">毎年 秋季</span>
-          </div>
-          <div class="experience-meta-item">
-            <span class="meta-label">集合場所</span>
-            <span class="meta-value">良平堂 栗カフェ受付</span>
-          </div>
-          <div class="experience-meta-item">
-            <span class="meta-label">栗畑まで</span>
-            <span class="meta-value">車で約2分</span>
-          </div>
+
+    <!-- 体験・イベント -->
+    <section class="top-experience">
+      <div class="top-experience-inner">
+        <div class="section-header-center">
+          <p class="section-label">Experience</p>
+          <h2 class="section-title">体験・イベント</h2>
         </div>
-        <button class="btn-primary" onclick="showPage('events')">体験・イベントを見る</button>
+        <div class="top-experience-grid">
+
+          <!-- 栗きんとん絞り体験 -->
+          <div class="top-exp-card" onclick="showPage('events')">
+            <div class="top-exp-card-body">
+              <span class="top-exp-badge">通年開催</span>
+              <h3>栗きんとん絞り体験</h3>
+              <p>女将や職人の指導のもと、栗きんとんを実際に絞る体験。仕上げた6個はそのままお持ち帰りいただけます。</p>
+              <div class="top-exp-meta">
+                <span>¥2,200 / 名</span>
+                <span>約20分</span>
+                <span>通年受付</span>
+              </div>
+              <span class="top-exp-link">詳細・予約 →</span>
+            </div>
+          </div>
+
+          <!-- 栗拾い体験 -->
+          <div class="top-exp-card has-photo" onclick="showPage('events')">
+            <div class="top-exp-card-photo">
+              <img src="kurihiroi.png" alt="良平堂 栗拾い体験">
+            </div>
+            <div class="top-exp-card-body">
+              <span class="top-exp-badge autumn">秋季限定</span>
+              <h3>栗拾い体験</h3>
+              <p>良平堂の栗畑で実際に栗を拾う秋だけのプログラム。約1kg分のお土産栗をお持ち帰りいただけます。</p>
+              <span class="top-exp-link">詳細を見る →</span>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -862,147 +877,64 @@
   <!-- ========== 体験・イベント ========== -->
   <div id="page-events" class="page">
     <div class="page-hero-small dark">
-      <p class="page-hero-en">Experience & Events</p>
+      <p class="page-hero-en">Experience</p>
       <h1 class="page-hero-jp">体験・イベント</h1>
     </div>
-    <div class="page-content">
-      <p class="lead-text">良平堂では、恵那の栗文化を身近に感じていただける体験プログラムをご用意しています。職人から直接技を学べる貴重な機会をぜひお楽しみください。</p>
+    <div class="page-content ev-content">
 
       <!-- 栗きんとん絞り体験 -->
-      <section class="event-section">
-        <div class="event-header">
-          <div class="event-header-text">
-            <span class="event-season-badge">通年開催</span>
-            <p class="section-label">Experience 01</p>
-            <h2 class="section-title">栗きんとん絞り体験</h2>
-            <p class="section-body">女将や職人から直接指導を受けながら、栗きんとんを実際に絞る体験プログラム。蒸しあげた栗を氷砂糖だけで炊いた本物の栗きんとんを、自分の手で一つひとつ仕上げます。完成した6個はそのままお土産としてお持ち帰りいただけます。</p>
-          </div>
-          <div class="event-key-info">
-            <div class="event-key-item">
-              <span class="event-key-label">料金</span>
-              <span class="event-key-value">¥2,200 <small>/ 名（税込）</small></span>
-            </div>
-            <div class="event-key-item">
-              <span class="event-key-label">所要時間</span>
-              <span class="event-key-value">約20分</span>
-            </div>
-            <div class="event-key-item">
-              <span class="event-key-label">定員</span>
-              <span class="event-key-value">1名〜（上限要相談）</span>
-            </div>
-            <div class="event-key-item">
-              <span class="event-key-label">開催時間</span>
-              <span class="event-key-value">午前10:00〜／午前11:00〜</span>
-            </div>
-            <div class="event-key-item">
-              <span class="event-key-label">お土産</span>
-              <span class="event-key-value">栗きんとん6個（体験でお作りいただいたもの）</span>
-            </div>
-          </div>
+      <article class="ev-article">
+        <div class="ev-label-row">
+          <span class="ev-badge">通年開催</span>
+        </div>
+        <h2 class="ev-title">栗きんとん絞り体験</h2>
+        <p class="ev-lead">女将や職人の指導のもと、栗きんとんを実際に絞る体験です。<br>仕上げた6個はそのままお持ち帰りいただけます。</p>
+
+        <div class="ev-specs">
+          <div class="ev-spec-item"><span>料金</span><strong>¥2,200 / 名（税込）</strong></div>
+          <div class="ev-spec-item"><span>所要時間</span><strong>約20分</strong></div>
+          <div class="ev-spec-item"><span>開催時間</span><strong>10:00〜 / 11:00〜</strong></div>
+          <div class="ev-spec-item"><span>定員</span><strong>1名〜（上限要相談）</strong></div>
+          <div class="ev-spec-item"><span>お土産</span><strong>栗きんとん6個</strong></div>
         </div>
 
-        <div class="event-photo-placeholder">
-          <div class="event-photo-inner">
-            <p class="event-photo-note">※ 体験写真は順次追加予定です</p>
-          </div>
+        <div class="ev-note">
+          <p>前日までにご予約ください。小さなお子様は親御様と一緒にご参加いただけます（1名分のお申込みで結構です）。10名様以上の団体・バスツアーのご利用はお電話にてご相談ください。</p>
         </div>
 
-        <div class="event-detail-grid">
-          <div class="event-detail-card">
-            <div class="event-detail-icon">01</div>
-            <h3>ご予約</h3>
-            <p>前日までに予約フォームよりお申し込みください。10名様以上の団体・バスツアーのご利用は別途ご相談ください。</p>
-          </div>
-          <div class="event-detail-card">
-            <div class="event-detail-icon">02</div>
-            <h3>体験</h3>
-            <p>女将や職人の指導のもと、栗きんとんを1個ずつ丁寧に絞ります。コツを掴めば、職人のような形に仕上がります。</p>
-          </div>
-          <div class="event-detail-card">
-            <div class="event-detail-icon">03</div>
-            <h3>お持ち帰り</h3>
-            <p>ご自身で絞った栗きんとん6個をそのままお土産に。できたての栗きんとんの味をぜひご家族にも。</p>
-          </div>
-        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSenoHIuJiIz71qjdKbHJAkovQoVx4-VuE55wJ5COTsN-XGJCw/viewform?pli=1"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="ev-cta-btn">予約フォームへ</a>
+      </article>
 
-        <div class="event-notes">
-          <h3>ご参加にあたって</h3>
-          <ul>
-            <li>ご予約は前日までにお申し込みください。</li>
-            <li>小さなお子様は親御様と一緒にご体験いただけます。その場合は1名分のお申し込みで結構です。</li>
-            <li>10名様以上のグループ・団体バスでお越しの場合は、ご希望の時間帯でご相談が可能です。</li>
-            <li>汚れてもよい服装でお越しください。エプロンはご用意しています。</li>
-          </ul>
-        </div>
-
-        <div class="event-cta">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSenoHIuJiIz71qjdKbHJAkovQoVx4-VuE55wJ5COTsN-XGJCw/viewform?pli=1"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="btn-primary event-reserve-btn">栗きんとん絞り体験を予約する</a>
-          <p class="event-cta-note">予約フォーム（Googleフォーム）が開きます</p>
-        </div>
-      </section>
-
-      <div class="event-divider"></div>
+      <div class="ev-rule"></div>
 
       <!-- 栗拾い体験 -->
-      <section class="event-section">
-        <div class="event-header">
-          <div class="event-header-text">
-            <span class="event-season-badge season">秋季限定</span>
-            <p class="section-label">Experience 02</p>
-            <h2 class="section-title">栗拾い体験</h2>
-            <p class="section-body">良平堂の栗畑で実際に栗を拾う、秋だけの特別な体験プログラム。拾った栗を含めた約1kg分（1,500円相当）のお土産栗をお持ち帰りいただけます。就労継続支援B型施設「有限会社めぐみ介護サービス」との共同運営で、参加費の一部は地域の福祉活動にも役立てられています。</p>
-          </div>
-          <div class="event-key-info">
-            <div class="event-key-item">
-              <span class="event-key-label">開催時期</span>
-              <span class="event-key-value">毎年 秋季（日程はお知らせページで告知）</span>
-            </div>
-            <div class="event-key-item">
-              <span class="event-key-label">集合場所</span>
-              <span class="event-key-value">良平堂 栗カフェ受付（栗畑まで車で約2分）</span>
-            </div>
-            <div class="event-key-item">
-              <span class="event-key-label">体験時間</span>
-              <span class="event-key-value">開始から30分間</span>
-            </div>
-            <div class="event-key-item">
-              <span class="event-key-label">お土産</span>
-              <span class="event-key-value">約1kg分の栗（1,500円相当）</span>
-            </div>
-          </div>
+      <article class="ev-article">
+        <div class="ev-label-row">
+          <span class="ev-badge autumn">秋季限定</span>
+        </div>
+        <h2 class="ev-title">栗拾い体験</h2>
+        <p class="ev-lead">良平堂の栗畑で、実際に栗を拾う秋だけの体験プログラムです。<br>拾った栗を含む約1kg分（1,500円相当）のお土産栗をお持ち帰りいただけます。</p>
+
+        <div class="ev-photo-block">
+          <img src="kurihiroi.png" alt="良平堂 栗拾い体験">
         </div>
 
-        <section class="experience-section" style="display:grid;grid-template-columns:1fr 1fr;min-height:400px;overflow:hidden;border-radius:14px;margin-bottom:40px;">
-          <div class="experience-photo" style="overflow:hidden;min-height:320px;">
-            <img src="kurihiroi.png" alt="良平堂 栗拾い体験" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </div>
-          <div style="background:#f2ebe0;padding:48px 40px;display:flex;flex-direction:column;justify-content:center;">
-            <h3 style="font-size:18px;font-weight:500;color:#3a5238;margin-bottom:16px;letter-spacing:0.05em;">栗畑で過ごす、秋の午後</h3>
-            <p style="font-size:13px;color:#6e6650;line-height:2;">笠置山麓の栗畑で、地面に落ちた栗を拾う秋の体験。南アルプスを望む開放的な環境の中で、恵那の栗がどのように育つかを肌で感じていただけます。</p>
-          </div>
-        </section>
-
-        <div class="event-notes">
-          <h3>ご参加にあたって</h3>
-          <ul>
-            <li>前日までのご予約制となっています。</li>
-            <li>10名様以上のグループ・団体バスの場合は、ご希望の時間帯でご相談が可能です。</li>
-            <li>雨天などによる開催可否は、イベント前日17時までに公式サイトにてお知らせします。</li>
-            <li>ケガ防止のため、短パン・サンダル・クロックスでのご参加はご遠慮ください。</li>
-            <li>軍手・飲み物・虫刺され予防スプレーをご持参ください。長靴を推奨します。</li>
-            <li>土手は足元が不安定な場合があります。安全第一でご参加ください。</li>
-            <li>イベント中の怪我・事故について、当方では責任を負いかねます。</li>
-          </ul>
+        <div class="ev-specs">
+          <div class="ev-spec-item"><span>開催時期</span><strong>毎年 秋季</strong></div>
+          <div class="ev-spec-item"><span>体験時間</span><strong>30分間</strong></div>
+          <div class="ev-spec-item"><span>集合場所</span><strong>良平堂 栗カフェ受付</strong></div>
+          <div class="ev-spec-item"><span>お土産</span><strong>約1kgの栗（1,500円相当）</strong></div>
         </div>
 
-        <div class="event-cta">
-          <button class="btn-primary event-reserve-btn" onclick="showPage('news')">開催日程を確認する</button>
-          <p class="event-cta-note">日程はお知らせ・イベントページにて随時告知します</p>
+        <div class="ev-note">
+          <p>前日までのご予約制。雨天の開催可否は前日17時までに公式サイトにてお知らせします。足元が不安定な場合があるため、長靴・軍手をご持参ください。就労継続支援B型施設「めぐみ介護サービス」との共同運営で、参加費の一部は地域の福祉活動に役立てられています。</p>
         </div>
-      </section>
+
+        <button class="ev-cta-btn outline" onclick="showPage('news')">開催日程を確認する</button>
+      </article>
 
     </div>
   </div>
