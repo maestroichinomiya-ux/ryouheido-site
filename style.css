@@ -1736,3 +1736,69 @@ a.online-link-card p {
   filter: invert(1) brightness(1.8);
   opacity: 0.85;
 }
+
+/* ===== ヘッダーロゴ強化 ===== */
+.logo {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 0;
+}
+
+.logo-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(122,82,32,0.25);
+  margin: 0 16px;
+  flex-shrink: 0;
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.logo-text-jp {
+  font-family: var(--font-serif-jp);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--clr-kuri);
+  letter-spacing: 0.12em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.logo-text-sub {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-size: 9px;
+  color: var(--clr-ink-light);
+  letter-spacing: 0.18em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* 透過ヘッダー時（動画背景上） */
+.header-transparent .logo-divider {
+  background: rgba(255,255,255,0.3);
+}
+.header-transparent .logo-text-jp {
+  color: rgba(255,255,255,0.92);
+}
+.header-transparent .logo-text-sub {
+  color: rgba(255,255,255,0.55);
+}
+
+/* スクロール後に戻す */
+.site-header.scrolled .logo-text-jp { color: var(--clr-kuri); }
+.site-header.scrolled .logo-text-sub { color: var(--clr-ink-light); }
+.site-header.scrolled .logo-divider { background: rgba(122,82,32,0.25); }
+
+/* スマホではテキスト部分を非表示 */
+@media (max-width: 768px) {
+  .logo-divider,
+  .logo-text-group {
+    display: none;
+  }
+}
