@@ -462,92 +462,67 @@ ul { list-style: none; }
 
 /* ===== 受賞バー ===== */
 .awards-bar {
-  background: linear-gradient(135deg, #2a1a08 0%, #4a2e10 40%, #3a2208 100%);
+  background: #1a1208;
   padding: 0;
   position: relative;
   overflow: hidden;
 }
-/* 背景の光沢ライン */
 .awards-bar::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 120px,
-      rgba(255,255,255,0.018) 120px,
-      rgba(255,255,255,0.018) 121px
-    );
-}
-.awards-bar::after {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(200,148,70,0.6), transparent);
+  background: linear-gradient(to right, transparent 0%, rgba(196,151,90,0.5) 30%, rgba(196,151,90,0.5) 70%, transparent 100%);
+}
+.awards-bar::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, rgba(196,151,90,0.3) 30%, rgba(196,151,90,0.3) 70%, transparent 100%);
 }
 
 .awards-bar-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 60px;
   display: flex;
   align-items: stretch;
   justify-content: center;
-  position: relative;
-  z-index: 1;
 }
 
 .award-badge {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 24px 40px;
-  position: relative;
-  transition: background var(--duration);
+  gap: 14px;
+  padding: 22px 48px;
   flex: 1;
-  text-align: center;
+  justify-content: center;
+  transition: background var(--duration);
 }
 .award-badge:hover {
-  background: rgba(255,255,255,0.04);
+  background: rgba(196,151,90,0.05);
 }
 
-.badge-icon {
-  font-size: 18px;
-  color: var(--clr-kuri-light);
-  display: block;
-  line-height: 1;
-  filter: drop-shadow(0 0 6px rgba(200,148,70,0.4));
-}
-
-.award-badge-text-en {
-  font-family: var(--font-serif-en);
-  font-style: italic;
-  font-size: 9px;
-  letter-spacing: 0.25em;
-  color: rgba(200,148,70,0.7);
-  text-transform: uppercase;
-  display: block;
-  line-height: 1;
+.award-line {
+  width: 20px;
+  height: 1px;
+  background: rgba(196,151,90,0.45);
+  flex-shrink: 0;
 }
 
 .award-badge-text-jp {
   font-family: var(--font-serif-jp);
   font-size: 12px;
-  color: rgba(255,255,255,0.88);
-  letter-spacing: 0.08em;
-  display: block;
+  font-weight: 400;
+  color: rgba(220,195,155,0.88);
+  letter-spacing: 0.18em;
   white-space: nowrap;
-  line-height: 1.4;
 }
 
 .award-divider {
   width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(200,148,70,0.3), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(196,151,90,0.25), transparent);
   align-self: stretch;
   flex-shrink: 0;
 }
@@ -1415,7 +1390,7 @@ ul { list-style: none; }
   .footer-inner, .footer-bottom { padding-left: 20px; padding-right: 20px; }
 
   .page-hero-small { padding: 130px 20px 60px; }
-  .awards-bar-inner { flex-wrap: wrap; }
+  .awards-bar-inner { flex-wrap: wrap; padding: 0 20px; }
   .award-badge { padding: 16px 20px; flex: none; width: 50%; }
   .award-divider { display: none; }
   .award-divider { display: none; }
