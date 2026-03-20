@@ -151,6 +151,13 @@ ul { list-style: none; }
 }
 .nav-contact:hover { background: var(--clr-kuri-mid) !important; }
 
+/* スクロール後は必ず白文字・栗茶背景を維持 */
+.site-header.scrolled .nav-contact {
+  background: var(--clr-kuri) !important;
+  color: var(--clr-white) !important;
+  border: none !important;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
