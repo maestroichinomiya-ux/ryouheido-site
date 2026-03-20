@@ -1,3 +1,11 @@
+// カフェバナー背景画像をJSでセット
+const cafeBanner = document.querySelector('.cafe-banner');
+if (cafeBanner) {
+  cafeBanner.style.backgroundImage = 'url("terrace.png")';
+  cafeBanner.style.backgroundSize = 'cover';
+  cafeBanner.style.backgroundPosition = 'center 40%';
+}
+
 // ページ切替
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
