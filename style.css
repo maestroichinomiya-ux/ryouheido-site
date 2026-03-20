@@ -1357,6 +1357,7 @@ ul { list-style: none; }
   .hamburger { display: flex; }
 
   .hero-content { padding: 100px 32px 60px; max-width: 100%; }
+  .hero-scroll { display: none; }
 
   .concept-inner { grid-template-columns: 1fr; gap: 40px; }
   .cafe-banner-inner { grid-template-columns: 1fr; }
