@@ -5,6 +5,7 @@ function showPage(pageId) {
   if (target) {
     target.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(updateHeader, 50);
   }
 }
 
@@ -17,10 +18,16 @@ function closeMobile() {
   window.scrollTo({ top: 0 });
 }
 
-// スクロール時ヘッダー
-window.addEventListener('scroll', () => {
-  document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 20);
-});
+// スクロール時ヘッダー（動画背景対応）
+function updateHeader() {
+  const header = document.getElementById('siteHeader');
+  const isTop = window.scrollY < 60;
+  const isHomePage = document.getElementById('page-home').classList.contains('active');
+  header.classList.toggle('scrolled', !isTop);
+  header.classList.toggle('header-transparent', isTop && isHomePage);
+}
+window.addEventListener('scroll', updateHeader);
+updateHeader();
 
 // 商品フィルター
 document.querySelectorAll('.filter-btn').forEach(btn => {

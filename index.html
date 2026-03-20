@@ -53,9 +53,21 @@
   <div id="page-home" class="page active">
 
     <section class="hero">
-      <div class="hero-bg">
-        <div class="hero-pattern"></div>
+      <!-- 動画背景 -->
+      <div class="hero-video-wrap">
+        <video
+          class="hero-video"
+          src="01_ryoheido_long.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        ></video>
+        <div class="hero-video-overlay"></div>
       </div>
+
       <div class="hero-content">
         <p class="hero-eyebrow fade-up">岐阜・恵那 創業1946年</p>
         <h1 class="hero-title fade-up delay-1">
@@ -68,23 +80,10 @@
         </p>
         <div class="hero-actions fade-up delay-3">
           <button class="btn-primary" onclick="showPage('products')">商品を見る</button>
-          <button class="btn-outline" onclick="showPage('cafe')">栗カフェへ</button>
+          <button class="btn-outline-light" onclick="showPage('cafe')">栗カフェへ</button>
         </div>
       </div>
-      <div class="hero-deco">
-        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="250" cy="250" r="200" fill="none" stroke="rgba(139,100,40,0.1)" stroke-width="1"/>
-          <circle cx="250" cy="250" r="150" fill="none" stroke="rgba(139,100,40,0.07)" stroke-width="1"/>
-          <circle cx="250" cy="250" r="100" fill="rgba(139,100,40,0.03)"/>
-          <!-- 栗のシルエット -->
-          <path d="M250 180 Q290 185 300 220 Q310 260 285 290 Q265 310 250 312 Q235 310 215 290 Q190 260 200 220 Q210 185 250 180Z" fill="rgba(100,65,20,0.12)"/>
-          <path d="M235 178 Q250 158 265 178" fill="none" stroke="rgba(100,65,20,0.2)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="250" y1="158" x2="250" y2="172" stroke="rgba(100,65,20,0.2)" stroke-width="1.5" stroke-linecap="round"/>
-          <!-- 小さな栗 -->
-          <path d="M150 300 Q165 303 170 318 Q175 335 162 345 Q155 350 150 350 Q145 350 138 345 Q125 335 130 318 Q135 303 150 300Z" fill="rgba(100,65,20,0.08)"/>
-          <path d="M340 160 Q352 162 356 174 Q360 188 351 195 Q346 199 340 199 Q334 199 329 195 Q320 188 324 174 Q328 162 340 160Z" fill="rgba(100,65,20,0.08)"/>
-        </svg>
-      </div>
+
       <div class="hero-scroll">
         <span>SCROLL</span>
         <div class="scroll-line"></div>
