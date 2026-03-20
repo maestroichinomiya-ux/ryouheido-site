@@ -1683,3 +1683,29 @@ a.online-link-card p {
   text-underline-offset: 3px;
 }
 .company-table a:hover { color: var(--clr-kuri-mid); }
+
+/* ===== トップ通販カード リンクボタン ===== */
+.shop-card-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+.shop-card-link-btn {
+  display: block;
+  padding: 9px 16px;
+  background: var(--clr-washi);
+  border: 1px solid rgba(122,82,32,0.2);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--clr-kuri);
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-decoration: none;
+  transition: background var(--duration), border-color var(--duration), color var(--duration);
+}
+.shop-card-link-btn:hover {
+  background: var(--clr-kuri);
+  border-color: var(--clr-kuri);
+  color: var(--clr-white);
+}
