@@ -75,3 +75,11 @@ document.querySelectorAll(
   el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
   observer.observe(el);
 });
+
+// 店舗タブ切替
+function switchShop(id, btn) {
+  document.querySelectorAll('.shop-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.shop-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('shop-' + id).classList.add('active');
+  btn.classList.add('active');
+}

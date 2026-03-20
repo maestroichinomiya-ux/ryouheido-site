@@ -306,8 +306,8 @@
           <div class="shop-preview-icon">
             <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8 12 L40 12 L40 38 Q24 44 8 38 Z" fill="none" stroke="#6b4c1e" stroke-width="1.5" opacity="0.6"/><path d="M8 12 Q24 6 40 12" fill="none" stroke="#6b4c1e" stroke-width="1.5" opacity="0.6"/><line x1="24" y1="12" x2="24" y2="44" stroke="#6b4c1e" stroke-width="1" opacity="0.4"/></svg>
           </div>
-          <h3>本店・栗カフェ</h3>
-          <p>岐阜県恵那市大井町2714-66<br>営業時間 9:00〜17:00<br>TEL 0573-26-0703</p>
+          <h3>本店・栗カフェ / ヤエチカ店</h3>
+          <p>本店：岐阜県恵那市大井町2714-66<br>ヤエチカ店：東京駅 八重洲地下街内</p>
           <button class="btn-text" onclick="showPage('shop')">アクセスを見る <span>→</span></button>
         </div>
         <div class="shop-preview-card">
@@ -740,8 +740,15 @@
       <h1 class="page-hero-jp">店舗案内</h1>
     </div>
     <div class="page-content">
-      <p class="lead-text">笠置山麓の趣ある建物に工房と栗カフェを併設した本店。職人が毎日手作りする和菓子を間近でご覧いただけます。</p>
+      <p class="lead-text">岐阜・恵那の本店と、東京・八重洲のヤエチカ店。2つの店舗で良平堂の栗和菓子をお楽しみいただけます。</p>
 
+      <div class="shop-tabs">
+        <button class="shop-tab active" onclick="switchShop('honten', this)">本店・栗カフェ（岐阜・恵那）</button>
+        <button class="shop-tab" onclick="switchShop('yaechika', this)">ヤエチカ店（東京・八重洲）</button>
+      </div>
+
+      <!-- 本店 -->
+      <div id="shop-honten" class="shop-panel active">
       <div class="shop-detail">
         <div class="shop-map-placeholder shop-photo">
           <img src="gaikan.png" alt="恵那栗工房 良平堂 外観" loading="lazy">
@@ -782,6 +789,45 @@
           <a href="https://maps.google.com/maps?q=岐阜県恵那市大井町2714-66" target="_blank" rel="noopener" class="btn-primary">Googleマップで見る</a>
         </div>
       </div>
+      </div><!-- /shop-honten -->
+
+      <!-- ヤエチカ店 -->
+      <div id="shop-yaechika" class="shop-panel">
+      <div class="shop-detail">
+        <div class="shop-map-placeholder shop-photo" style="background:#f0ebe0;display:flex;align-items:center;justify-content:center;">
+          <div style="text-align:center;padding:40px;">
+            <p style="font-family:'Shippori Mincho',serif;font-size:18px;color:#7a5220;margin-bottom:8px;letter-spacing:0.1em;">ヤエチカ店</p>
+            <p style="font-size:12px;color:#a08060;letter-spacing:0.08em;">東京駅 八重洲地下街</p>
+          </div>
+        </div>
+        <div class="shop-info-panel">
+          <h2>恵那栗工房 良平堂 ヤエチカ店</h2>
+          <div class="shop-info-list">
+            <div class="shop-info-row">
+              <span class="shop-info-label">住所</span>
+              <span>東京都中央区八重洲2丁目1番<br>八重洲地下街（ヤエチカ）内</span>
+            </div>
+            <div class="shop-info-row">
+              <span class="shop-info-label">電話</span>
+              <span><a href="tel:07092194634">070-9219-4634</a></span>
+            </div>
+            <div class="shop-info-row">
+              <span class="shop-info-label">営業時間</span>
+              <span>10:00 – 20:00</span>
+            </div>
+            <div class="shop-info-row">
+              <span class="shop-info-label">アクセス</span>
+              <span>JR東京駅 八重洲中央口すぐ<br>東京メトロ 京橋駅より徒歩約3分</span>
+            </div>
+            <div class="shop-info-row">
+              <span class="shop-info-label">支払い</span>
+              <span>各種クレジットカード・交通系IC・PayPayほか電子マネー対応</span>
+            </div>
+          </div>
+          <a href="https://www.yaechika.com/shop/sp488/" target="_blank" rel="noopener" class="btn-primary">ヤエチカ公式サイトで見る</a>
+        </div>
+      </div>
+      </div><!-- /shop-yaechika -->
 
       <div class="online-shop-section">
         <div class="section-header-center">

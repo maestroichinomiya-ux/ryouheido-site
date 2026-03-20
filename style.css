@@ -2239,3 +2239,42 @@ a.online-link-card p {
   .top-experience-inner { padding: 0 20px; }
   .ev-content { padding: 40px 20px 80px !important; }
 }
+
+/* ===== 店舗タブ ===== */
+.shop-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(122,82,32,0.15);
+}
+.shop-tab {
+  padding: 14px 28px;
+  font-size: 13px;
+  font-family: var(--font-serif-jp);
+  color: var(--clr-ink-light);
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all var(--duration);
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  white-space: nowrap;
+}
+.shop-tab:hover { color: var(--clr-kuri); }
+.shop-tab.active {
+  color: var(--clr-kuri);
+  border-bottom-color: var(--clr-kuri);
+  font-weight: 500;
+}
+
+.shop-panel { display: none; }
+.shop-panel.active { display: block; }
+
+@media (max-width: 768px) {
+  .shop-tabs { flex-direction: column; border-bottom: none; gap: 4px; }
+  .shop-tab { border: 1.5px solid rgba(122,82,32,0.2); border-radius: var(--radius-sm); margin-bottom: 0; text-align: left; }
+  .shop-tab.active { background: var(--clr-kuri); color: white; border-color: var(--clr-kuri); }
+}
