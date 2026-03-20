@@ -1712,31 +1712,27 @@ a.online-link-card p {
 
 /* ===== ロゴ画像 ===== */
 .logo-img {
-  height: 44px;
+  height: 40px;
   width: auto;
   display: block;
-  /* GIFの白背景を透過 */
-  mix-blend-mode: multiply;
   transition: opacity var(--duration);
 }
-.logo:hover .logo-img { opacity: 0.75; }
+.logo:hover .logo-img { opacity: 0.7; }
 
 /* 透過ヘッダー時（動画背景上）は白く反転 */
 .header-transparent .logo-img {
-  mix-blend-mode: normal;
   filter: invert(1) brightness(2);
 }
 .site-header.scrolled .logo-img {
-  mix-blend-mode: multiply;
   filter: none;
 }
 
 /* フッターロゴ */
 .footer-logo-img {
-  height: 56px;
+  height: 48px;
   width: auto;
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   filter: invert(1) brightness(1.8);
   opacity: 0.85;
 }
