@@ -91,13 +91,15 @@ ul { list-style: none; }
 
 .logo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   line-height: 1.1;
   cursor: pointer;
   transition: opacity var(--duration);
   flex-shrink: 0;
+  gap: 0;
 }
-.logo:hover { opacity: 0.68; }
+.logo:hover { opacity: 0.75; }
 
 .logo-sub {
   font-family: var(--font-serif-jp);
@@ -1738,13 +1740,6 @@ a.online-link-card p {
 }
 
 /* ===== ヘッダーロゴ強化 ===== */
-.logo {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center;
-  gap: 0;
-}
-
 .logo-divider {
   width: 1px;
   height: 32px;
@@ -1756,7 +1751,7 @@ a.online-link-card p {
 .logo-text-group {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 
 .logo-text-jp {
@@ -1781,13 +1776,13 @@ a.online-link-card p {
 
 /* 透過ヘッダー時（動画背景上） */
 .header-transparent .logo-divider {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.35);
 }
 .header-transparent .logo-text-jp {
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.95);
 }
 .header-transparent .logo-text-sub {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.6);
 }
 
 /* スクロール後に戻す */
