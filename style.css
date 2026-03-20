@@ -1531,3 +1531,90 @@ ul { list-style: none; }
   object-fit: cover;
   display: block;
 }
+
+/* ===== 栗拾い体験セクション ===== */
+.experience-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+.experience-photo {
+  overflow: hidden;
+  position: relative;
+}
+.experience-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s var(--ease);
+}
+.experience-section:hover .experience-photo img {
+  transform: scale(1.03);
+}
+
+.experience-content {
+  background: var(--clr-washi);
+  padding: 72px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.experience-season {
+  font-size: clamp(16px, 1.8vw, 22px);
+  color: var(--clr-kuri-mid);
+  font-weight: 400;
+  display: inline-block;
+  padding: 2px 16px;
+  border: 1px solid var(--clr-kuri-pale);
+  border-radius: var(--radius-full);
+  margin-left: 12px;
+  vertical-align: middle;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.experience-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 28px 0 36px;
+  border-top: 1px solid rgba(122,82,32,0.12);
+}
+.experience-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(122,82,32,0.12);
+  font-size: 13px;
+}
+.meta-label {
+  color: var(--clr-kuri-mid);
+  width: 90px;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+.meta-value {
+  color: var(--clr-ink-mid);
+}
+
+@media (max-width: 1024px) {
+  .experience-section {
+    grid-template-columns: 1fr;
+  }
+  .experience-photo {
+    height: 320px;
+  }
+  .experience-content {
+    padding: 48px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-photo { height: 260px; }
+  .experience-content { padding: 36px 20px; }
+}
