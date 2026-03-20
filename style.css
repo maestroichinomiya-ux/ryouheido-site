@@ -1608,3 +1608,78 @@ ul { list-style: none; }
   .experience-photo { min-height: 260px; }
   .experience-content { padding: 36px 20px; }
 }
+
+/* ===== オンラインショップカード（リンク対応） ===== */
+a.online-link-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  background: var(--clr-white);
+  border-radius: var(--radius-md);
+  padding: 36px 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(122,82,32,0.12);
+  transition: transform var(--duration), box-shadow var(--duration), border-color var(--duration);
+  position: relative;
+  overflow: hidden;
+}
+a.online-link-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(122,82,32,0.03);
+  opacity: 0;
+  transition: opacity var(--duration);
+}
+a.online-link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--clr-kuri-light);
+}
+a.online-link-card:hover::before { opacity: 1; }
+
+.online-link-label {
+  font-family: var(--font-serif-en);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--clr-kuri-mid);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+a.online-link-card h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--clr-kuri);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+a.online-link-card p {
+  font-size: 12px;
+  color: var(--clr-ink-light);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.online-link-arrow {
+  font-size: 12px;
+  color: var(--clr-kuri);
+  letter-spacing: 0.05em;
+  margin-top: auto;
+}
+
+/* トップ通販カードのリンク群 */
+.shop-card-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* 会社概要テーブル内リンク */
+.company-table a {
+  color: var(--clr-kuri);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.company-table a:hover { color: var(--clr-kuri-mid); }
