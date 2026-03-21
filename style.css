@@ -2952,15 +2952,17 @@ a.online-link-card p {
   flex-direction: column;
   gap: 0;
   margin-bottom: 20px;
-  border: 1px solid rgba(122,82,32,0.15);
+  border: 1px solid rgba(122,82,32,0.2);
   border-radius: var(--radius-sm);
   overflow: hidden;
+  background: var(--clr-white);
 }
 .cafe-exp-meta-item {
   display: flex;
   align-items: center;
   padding: 10px 14px;
-  border-bottom: 1px solid rgba(122,82,32,0.1);
+  border-bottom: 1px solid rgba(122,82,32,0.12);
+  background: var(--clr-white);
   gap: 0;
 }
 .cafe-exp-meta-item:last-child {
@@ -2981,7 +2983,7 @@ a.online-link-card p {
 .meta-v {
   font-size: 13px;
   color: var(--clr-ink);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.04em;
 }
 .cafe-exp-btn {
