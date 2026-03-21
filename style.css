@@ -2851,3 +2851,85 @@ a.online-link-card p {
 .about-intro-inner.in-view .about-img-placeholder::after {
   transform: scaleX(0);
 }
+
+/* ===== カフェ テラス写真 ===== */
+.cafe-terrace-photo-wrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 40px;
+  height: 420px;
+}
+.cafe-terrace-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  transition: transform 0.8s var(--ease);
+}
+.cafe-terrace-photo-wrap:hover img {
+  transform: scale(1.03);
+}
+
+/* ===== カフェ 体験2カード ===== */
+.cafe-exp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 40px;
+}
+.cafe-exp-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.cafe-exp-img {
+  height: 200px;
+  overflow: hidden;
+}
+.cafe-exp-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s var(--ease);
+}
+.cafe-exp-card:hover .cafe-exp-img img {
+  transform: scale(1.04);
+}
+.cafe-exp-body {
+  padding: 24px;
+}
+.cafe-exp-body h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--clr-white);
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+.cafe-exp-body p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+.cafe-exp-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.cafe-exp-meta span {
+  font-size: 11px;
+  padding: 3px 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius-full);
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .cafe-terrace-photo-wrap { height: 260px; }
+  .cafe-exp-grid { grid-template-columns: 1fr; }
+}
