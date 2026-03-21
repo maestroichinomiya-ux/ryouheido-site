@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://ryouheidou.jp/</loc>
+    <lastmod>2025-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ryouheidou.jp/"/>
+  </url>
+
+  <url>
+    <loc>https://ryouheidou.jp/#about</loc>
+    <lastmod>2025-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ryouheidou.jp/#products</loc>
+    <lastmod>2025-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://ryouheidou.jp/#cafe</loc>
+    <lastmod>2025-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ryouheidou.jp/#events</loc>
+    <lastmod>2025-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ryouheidou.jp/#news</loc>
+    <lastmod>2025-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ryouheidou.jp/#shop</loc>
+    <lastmod>2025-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ryouheidou.jp/#contact</loc>
+    <lastmod>2025-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
