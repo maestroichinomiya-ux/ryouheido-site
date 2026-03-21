@@ -427,3 +427,83 @@ function hashToPage(hash) {
     updateSEO('home');
   }
 })();
+
+/* =============================================
+   強化アニメーション JS
+   ============================================= */
+
+// ===== IntersectionObserver で in-view クラスを付与 =====
+const inViewTargets = [
+  '.concept',
+  '.products-preview',
+  '.top-experience',
+  '.cafe-banner',
+  '.ec-banner',
+  '.news-preview',
+  '.about-intro-inner',
+];
+
+const inViewObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      inViewObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+inViewTargets.forEach(sel => {
+  document.querySelectorAll(sel).forEach(el => inViewObserver.observe(el));
+});
+
+// ===== 商品カード・体験カード・ニュース 順番にアニメーション =====
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // 同じ親の中での順番を取得してディレイをずらす
+      const parent = entry.target.parentElement;
+      const siblings = [...parent.children].filter(c =>
+        c.classList.contains('product-card') ||
+        c.classList.contains('product-item') ||
+        c.classList.contains('top-exp-card') ||
+        c.classList.contains('news-item') ||
+        c.classList.contains('news-full-item')
+      );
+      const idx = siblings.indexOf(entry.target);
+      setTimeout(() => {
+        entry.target.classList.add('animated');
+      }, idx * 100);
+      cardObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+[
+  '.product-card',
+  '.product-item',
+  '.top-exp-card',
+  '.news-item',
+  '.news-full-item',
+].forEach(sel => {
+  document.querySelectorAll(sel).forEach(el => {
+    // 既存のfadeObserverスタイルをリセット
+    el.style.opacity = '';
+    el.style.transform = '';
+    el.style.transition = '';
+    cardObserver.observe(el);
+  });
+});
+
+// ===== パララックス（栗カフェバナー背景）=====
+const cafeBg = document.querySelector('.cafe-banner');
+if (cafeBg) {
+  window.addEventListener('scroll', () => {
+    const rect = cafeBg.getBoundingClientRect();
+    const viewH = window.innerHeight;
+    if (rect.top < viewH && rect.bottom > 0) {
+      const progress = (viewH - rect.top) / (viewH + rect.height);
+      const offset = (progress - 0.5) * 60;
+      cafeBg.style.backgroundPositionY = `calc(40% + ${offset}px)`;
+    }
+  }, { passive: true });
+}

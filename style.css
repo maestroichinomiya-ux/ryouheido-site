@@ -2628,3 +2628,226 @@ a.online-link-card p {
 .ev-photo-block:hover img {
   transform: scale(1.03);
 }
+
+/* =============================================
+   追加アニメーション - 少し派手・上品さ維持
+   ============================================= */
+
+/* ===== ヒーロー テキスト 文字スライドイン ===== */
+.hero-eyebrow {
+  opacity: 0;
+  animation: heroEyebrowIn 1s cubic-bezier(0.22,1,0.36,1) 0.2s forwards;
+}
+@keyframes heroEyebrowIn {
+  from { opacity: 0; letter-spacing: 0.5em; }
+  to   { opacity: 1; letter-spacing: 0.28em; }
+}
+
+.hero-title span:nth-child(1) {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroLineIn 1s cubic-bezier(0.22,1,0.36,1) 0.5s forwards;
+}
+.hero-title span:nth-child(2) {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroLineIn 1s cubic-bezier(0.22,1,0.36,1) 0.75s forwards;
+}
+@keyframes heroLineIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-desc {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroLineIn 1s cubic-bezier(0.22,1,0.36,1) 1.1s forwards;
+}
+.hero-actions {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroLineIn 0.9s cubic-bezier(0.22,1,0.36,1) 1.4s forwards;
+}
+
+/* ===== セクション間 区切り装飾ライン ===== */
+.concept,
+.products-preview,
+.top-experience,
+.ec-banner,
+.news-preview,
+.shop-preview {
+  position: relative;
+}
+.concept::before,
+.products-preview::before,
+.top-experience::before,
+.news-preview::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--clr-kuri-light), transparent);
+  transition: transform 1.2s cubic-bezier(0.22,1,0.36,1);
+}
+.concept.in-view::before,
+.products-preview.in-view::before,
+.top-experience.in-view::before,
+.news-preview.in-view::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ===== セクションスライドイン（左右から）===== */
+.concept-text,
+.about-intro-text {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1);
+}
+.concept-visual,
+.about-intro-visual {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 1s cubic-bezier(0.22,1,0.36,1) 0.15s, transform 1s cubic-bezier(0.22,1,0.36,1) 0.15s;
+}
+.concept.in-view .concept-text,
+.about-intro-inner.in-view .about-intro-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+.concept.in-view .concept-visual,
+.about-intro-inner.in-view .about-intro-visual {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== 商品カード 順番にスケールイン ===== */
+.product-card,
+.product-item {
+  opacity: 0;
+  transform: translateY(36px) scale(0.97);
+  transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+              transform 0.8s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.35s ease;
+}
+.product-card.animated,
+.product-item.animated {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 16px 48px rgba(122,82,32,0.18) !important;
+}
+.product-item:hover {
+  transform: translateY(-6px) scale(1.01) !important;
+}
+
+/* ===== 栗カフェバナー パララックス風 ===== */
+.cafe-banner {
+  overflow: hidden;
+}
+.cafe-banner-text {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1.1s cubic-bezier(0.22,1,0.36,1) 0.2s,
+              transform 1.1s cubic-bezier(0.22,1,0.36,1) 0.2s;
+}
+.cafe-banner.in-view .cafe-banner-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== 体験カード ===== */
+.top-exp-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1),
+              transform 0.9s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.35s ease;
+}
+.top-exp-card.animated {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.top-exp-card:nth-child(2) {
+  transition-delay: 0.18s;
+}
+.top-exp-card:hover {
+  transform: translateY(-8px) scale(1.015) !important;
+  box-shadow: 0 20px 56px rgba(122,82,32,0.18) !important;
+}
+
+/* ===== EC バナー カウントアップ風テキスト ===== */
+.ec-banner-title {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 1s cubic-bezier(0.22,1,0.36,1),
+              transform 1s cubic-bezier(0.22,1,0.36,1);
+}
+.ec-banner.in-view .ec-banner-title {
+  opacity: 1;
+  transform: translateX(0);
+}
+.ec-banner-btns {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 1s cubic-bezier(0.22,1,0.36,1) 0.2s,
+              transform 1s cubic-bezier(0.22,1,0.36,1) 0.2s;
+}
+.ec-banner.in-view .ec-banner-btns {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== ニュースアイテム 左からスライド ===== */
+.news-item,
+.news-full-item {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+              transform 0.7s cubic-bezier(0.22,1,0.36,1),
+              background var(--duration);
+}
+.news-item.animated,
+.news-full-item.animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== ボタン pulse ===== */
+.btn-primary,
+.ev-cta-btn:not(.outline) {
+  animation: btnPulse 3.5s ease-in-out infinite;
+}
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(122,82,32,0.28); }
+  50%       { box-shadow: 0 4px 28px rgba(122,82,32,0.48); }
+}
+.btn-primary:hover,
+.ev-cta-btn:hover {
+  animation: none;
+}
+
+/* ===== 画像 reveal（左からワイプ）===== */
+.concept-img-main,
+.about-img-placeholder,
+.ev-photo-block {
+  overflow: hidden;
+  position: relative;
+}
+.concept-img-main::after,
+.about-img-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--clr-washi);
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 1.1s cubic-bezier(0.77,0,0.18,1) 0.3s;
+  z-index: 1;
+}
+.concept.in-view .concept-img-main::after,
+.about-intro-inner.in-view .about-img-placeholder::after {
+  transform: scaleX(0);
+}
