@@ -2871,7 +2871,11 @@ a.online-link-card p {
   transform: scale(1.03);
 }
 
-/* ===== カフェ 体験2カード ===== */
+
+
+
+
+/* ===== カフェ 体験カード ===== */
 .cafe-exp-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2879,83 +2883,19 @@ a.online-link-card p {
   margin-top: 40px;
 }
 .cafe-exp-card {
-  background: rgba(255,255,255,0.08);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.12);
-}
-.cafe-exp-img {
-  height: 200px;
-  overflow: hidden;
-}
-.cafe-exp-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.7s var(--ease);
-}
-.cafe-exp-card:hover .cafe-exp-img img {
-  transform: scale(1.04);
-}
-.cafe-exp-body {
-  padding: 24px;
-}
-.cafe-exp-body h3 {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--clr-white);
-  margin-bottom: 10px;
-  letter-spacing: 0.05em;
-}
-.cafe-exp-body p {
-  font-size: 13px;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.9;
-  margin-bottom: 14px;
-}
-.cafe-exp-meta {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 4px;
-}
-.cafe-exp-meta span {
-  font-size: 11px;
-  padding: 3px 10px;
-  background: rgba(255,255,255,0.1);
-  border-radius: var(--radius-full);
-  color: rgba(255,255,255,0.75);
-  letter-spacing: 0.04em;
-}
-
-@media (max-width: 768px) {
-  .cafe-terrace-photo-wrap { height: 260px; }
-  .cafe-exp-grid { grid-template-columns: 1fr; }
-}
-
-/* ===== カフェ 体験カード リデザイン ===== */
-.cafe-exp-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 40px;
-}
-.cafe-exp-card {
   background: var(--clr-white);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0,0,0,0.1);
-  transition: transform var(--duration), box-shadow var(--duration);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
 }
 .cafe-exp-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.16);
 }
 .cafe-exp-img {
   height: 220px;
   overflow: hidden;
-  position: relative;
 }
 .cafe-exp-img img {
   width: 100%;
@@ -2969,13 +2909,12 @@ a.online-link-card p {
 }
 .cafe-exp-body {
   padding: 28px 24px;
-  background: var(--clr-white);
 }
 .cafe-exp-header {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 .cafe-exp-header h3 {
   font-size: 18px;
@@ -2987,20 +2926,20 @@ a.online-link-card p {
 .cafe-exp-badge {
   display: inline-block;
   font-size: 10px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   padding: 4px 12px;
   border-radius: var(--radius-full);
   white-space: nowrap;
   flex-shrink: 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 .cafe-exp-badge.green {
   background: var(--clr-green);
-  color: var(--clr-white);
+  color: #fff;
 }
 .cafe-exp-badge.amber {
   background: var(--clr-kuri);
-  color: var(--clr-white);
+  color: #fff;
 }
 .cafe-exp-body > p {
   font-size: 13px;
@@ -3011,64 +2950,79 @@ a.online-link-card p {
 .cafe-exp-meta {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0;
   margin-bottom: 20px;
-  padding: 14px 16px;
-  background: var(--clr-washi);
+  border: 1px solid rgba(122,82,32,0.15);
   border-radius: var(--radius-sm);
+  overflow: hidden;
 }
 .cafe-exp-meta-item {
   display: flex;
-  gap: 12px;
-  font-size: 12px;
   align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(122,82,32,0.1);
+  gap: 0;
+}
+.cafe-exp-meta-item:last-child {
+  border-bottom: none;
 }
 .meta-l {
-  color: var(--clr-kuri-mid);
+  font-size: 11px;
+  color: var(--clr-white);
+  background: var(--clr-kuri);
+  padding: 2px 8px;
+  border-radius: 2px;
   letter-spacing: 0.06em;
-  width: 32px;
+  width: 40px;
+  text-align: center;
   flex-shrink: 0;
+  margin-right: 12px;
 }
 .meta-v {
+  font-size: 13px;
   color: var(--clr-ink);
   font-weight: 500;
   letter-spacing: 0.04em;
 }
 .cafe-exp-btn {
-  display: inline-block;
+  display: block;
   width: 100%;
   text-align: center;
-  padding: 12px 24px;
+  padding: 14px 24px;
   border-radius: var(--radius-full);
   font-size: 13px;
   font-family: var(--font-serif-jp);
   letter-spacing: 0.1em;
   cursor: pointer;
-  transition: all var(--duration);
+  transition: all 0.3s var(--ease);
   text-decoration: none;
   box-sizing: border-box;
+  font-weight: 500;
 }
 .cafe-exp-btn.primary {
   background: var(--clr-kuri);
-  color: var(--clr-white);
-  border: 1.5px solid var(--clr-kuri);
-  box-shadow: 0 4px 16px rgba(122,82,32,0.25);
+  color: #fff;
+  border: 2px solid var(--clr-kuri);
+  box-shadow: 0 4px 16px rgba(122,82,32,0.3);
 }
 .cafe-exp-btn.primary:hover {
   background: var(--clr-kuri-mid);
+  border-color: var(--clr-kuri-mid);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(122,82,32,0.35);
 }
 .cafe-exp-btn.outline {
   background: transparent;
   color: var(--clr-kuri);
-  border: 1.5px solid var(--clr-kuri);
+  border: 2px solid var(--clr-kuri);
 }
 .cafe-exp-btn.outline:hover {
   background: var(--clr-kuri);
-  color: var(--clr-white);
+  color: #fff;
   transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
   .cafe-exp-grid { grid-template-columns: 1fr; }
+  .cafe-exp-img { height: 180px; }
 }
