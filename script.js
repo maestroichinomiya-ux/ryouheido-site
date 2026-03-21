@@ -217,12 +217,17 @@ function reinitFade() {
 // ===== 受賞バー 横スクロールループ =====
 const awardsInner = document.querySelector('.awards-bar-inner');
 if (awardsInner) {
-  // コンテンツを2倍に複製してループ
   const clone = awardsInner.innerHTML;
   awardsInner.innerHTML = clone + clone;
   awardsInner.style.display = 'flex';
+  awardsInner.style.flexDirection = 'row';
+  awardsInner.style.flexWrap = 'nowrap';
   awardsInner.style.width = 'max-content';
-  awardsInner.style.animation = 'awardsScroll 28s linear infinite';
+
+  // スマホは速く、PCはゆっくり
+  const isMobile = window.innerWidth < 768;
+  const speed = isMobile ? '14s' : '28s';
+  awardsInner.style.animation = `awardsScroll ${speed} linear infinite`;
 
   const awardsBar = document.querySelector('.awards-bar');
   if (awardsBar) {

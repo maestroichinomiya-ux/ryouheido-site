@@ -491,22 +491,46 @@ ul { list-style: none; }
   background: linear-gradient(to right, transparent 0%, rgba(196,151,90,0.3) 30%, rgba(196,151,90,0.3) 70%, transparent 100%);
 }
 
+.awards-bar {
+  overflow: hidden;
+  background: #1a1208;
+  position: relative;
+}
+.awards-bar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, rgba(196,151,90,0.5) 30%, rgba(196,151,90,0.5) 70%, transparent 100%);
+  z-index: 1;
+}
+.awards-bar::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, rgba(196,151,90,0.3) 30%, rgba(196,151,90,0.3) 70%, transparent 100%);
+  z-index: 1;
+}
+
 .awards-bar-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 60px;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  width: max-content;
+  padding: 0;
+  margin: 0;
 }
 
 .award-badge {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 14px;
-  padding: 22px 48px;
-  flex: 1;
-  justify-content: center;
+  padding: 20px 40px;
+  flex: none;
+  white-space: nowrap;
   transition: background var(--duration);
 }
 .award-badge:hover {
@@ -531,8 +555,8 @@ ul { list-style: none; }
 
 .award-divider {
   width: 1px;
+  height: 20px;
   background: linear-gradient(to bottom, transparent, rgba(196,151,90,0.25), transparent);
-  align-self: stretch;
   flex-shrink: 0;
 }
 
@@ -1384,11 +1408,9 @@ ul { list-style: none; }
   .footer-inner, .footer-bottom { padding-left: 20px; padding-right: 20px; }
 
   .page-hero-small { padding: 130px 20px 60px; }
-  .awards-bar-inner { flex-wrap: wrap; padding: 0 20px; }
-  .award-badge { padding: 16px 20px; flex: none; width: 50%; }
-  .award-divider { display: none; }
-  .award-divider { display: none; }
-  .award-badge { padding: 4px 12px; font-size: 11px; }
+  .awards-bar-inner { flex-wrap: nowrap !important; padding: 0; }
+  .award-badge { padding: 16px 24px; font-size: 11px; }
+  .award-divider { display: block; }
 
   .products-grid { grid-template-columns: 1fr; max-width: 380px; margin-left: auto; margin-right: auto; }
   .products-full-grid { grid-template-columns: 1fr; }
