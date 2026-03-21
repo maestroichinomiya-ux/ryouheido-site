@@ -286,3 +286,139 @@ document.querySelectorAll('.award-year').forEach(el => {
 document.querySelectorAll('.btn-primary, .ec-btn.primary, .ev-cta-btn').forEach(btn => {
   btn.classList.add('shine-btn');
 });
+
+/* =============================================
+   URLハッシュ対応 & ページ別SEO最適化
+   ============================================= */
+
+const BASE_URL = 'https://ryouheidou.jp/';
+
+// ページごとのSEOメタ情報
+const PAGE_SEO = {
+  home: {
+    title: '恵那栗工房 良平堂 | 岐阜・恵那の栗和菓子専門店',
+    desc: '岐阜県恵那市の栗和菓子専門店。創業1946年。栗きんとん・栗福柿など、恵那・中津川産の和栗を使った職人手作りの栗和菓子をお届けします。日本ギフト大賞2019受賞。伊勢神宮奉納品。',
+    url: BASE_URL,
+    hash: ''
+  },
+  about: {
+    title: '良平堂について | 恵那栗工房 良平堂',
+    desc: '創業1946年、岐阜県恵那市の栗和菓子専門店「恵那栗工房 良平堂」。恵那・中津川産の和栗だけを使い、氷砂糖で炊く昔ながらの製法を守り続ける職人の技と想い。',
+    url: BASE_URL + '#about',
+    hash: '#about'
+  },
+  products: {
+    title: '商品紹介 | 恵那栗工房 良平堂',
+    desc: '栗きんとん・栗福柿・栗ころん・恵那栗ようかんなど、恵那・中津川産の国産和栗を使った職人手作りの栗和菓子一覧。ギフト・お中元・お歳暮にも。日本ギフト大賞2019受賞。',
+    url: BASE_URL + '#products',
+    hash: '#products'
+  },
+  cafe: {
+    title: '栗カフェ | 恵那栗工房 良平堂',
+    desc: '笠置山麓の絶景テラス席で搾りたてモンブランを。恵那の街並みと南アルプスを一望しながら、栗スイーツをお楽しみいただけます。岐阜・恵那市大井町。',
+    url: BASE_URL + '#cafe',
+    hash: '#cafe'
+  },
+  events: {
+    title: '体験・イベント | 恵那栗工房 良平堂',
+    desc: '栗きんとん絞り体験（通年・¥2,200）と栗拾い体験（秋季限定）。職人・女将の指導のもと本物の栗きんとんを作る体験。岐阜・恵那市良平堂。',
+    url: BASE_URL + '#events',
+    hash: '#events'
+  },
+  news: {
+    title: 'お知らせ | 恵那栗工房 良平堂',
+    desc: '恵那栗工房 良平堂からのお知らせ・季節商品情報・イベント開催情報をお届けします。',
+    url: BASE_URL + '#news',
+    hash: '#news'
+  },
+  shop: {
+    title: '店舗案内 | 恵那栗工房 良平堂',
+    desc: '恵那栗工房 良平堂の店舗案内。岐阜県恵那市の本店（栗カフェ併設）と東京・八重洲地下街ヤエチカ店の営業時間・アクセス情報。',
+    url: BASE_URL + '#shop',
+    hash: '#shop'
+  },
+  contact: {
+    title: 'お問い合わせ | 恵那栗工房 良平堂',
+    desc: '恵那栗工房 良平堂へのお問い合わせ。商品・ギフト・法人注文・栗きんとん絞り体験予約など、お気軽にご連絡ください。TEL 0573-26-0703。',
+    url: BASE_URL + '#contact',
+    hash: '#contact'
+  }
+};
+
+// SEOメタを更新する関数
+function updateSEO(pageId) {
+  const seo = PAGE_SEO[pageId] || PAGE_SEO.home;
+
+  // title
+  document.getElementById('pageTitle').textContent = seo.title;
+  // description
+  document.getElementById('pageDesc').setAttribute('content', seo.desc);
+  // canonical
+  document.getElementById('canonical').setAttribute('href', seo.url);
+  // OGP
+  document.getElementById('ogTitle').setAttribute('content', seo.title);
+  document.getElementById('ogDesc').setAttribute('content', seo.desc);
+  document.getElementById('ogUrl').setAttribute('content', seo.url);
+  // Twitter
+  document.getElementById('twTitle').setAttribute('content', seo.title);
+  document.getElementById('twDesc').setAttribute('content', seo.desc);
+}
+
+// URLハッシュを更新する関数
+function updateHash(pageId) {
+  const seo = PAGE_SEO[pageId] || PAGE_SEO.home;
+  const newUrl = seo.hash ? seo.hash : (location.pathname + location.search);
+  history.pushState({ page: pageId }, seo.title, newUrl || '/');
+}
+
+// showPage をSEO・ハッシュ対応に拡張
+const _origShowPage = window.showPage;
+window.showPage = function(pageId) {
+  updateSEO(pageId);
+  updateHash(pageId);
+  _origShowPage(pageId);
+};
+
+// ブラウザの戻る・進むボタン対応
+window.addEventListener('popstate', function(e) {
+  const pageId = e.state?.page || hashToPage(location.hash);
+  if (pageId) {
+    updateSEO(pageId);
+    _origShowPage(pageId);
+  }
+});
+
+// ハッシュからページIDを解決
+function hashToPage(hash) {
+  const map = {
+    '#about': 'about',
+    '#products': 'products',
+    '#cafe': 'cafe',
+    '#events': 'events',
+    '#news': 'news',
+    '#shop': 'shop',
+    '#contact': 'contact',
+    '': 'home',
+    '#': 'home'
+  };
+  return map[hash] || 'home';
+}
+
+// 初期ロード時にハッシュがあればそのページを表示
+(function() {
+  const hash = location.hash;
+  const pageId = hashToPage(hash);
+  if (pageId && pageId !== 'home') {
+    // DOMが準備できてから実行
+    document.addEventListener('DOMContentLoaded', function() {
+      updateSEO(pageId);
+      const target = document.getElementById('page-' + pageId);
+      if (target) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        target.classList.add('active');
+      }
+    });
+  } else {
+    updateSEO('home');
+  }
+})();
