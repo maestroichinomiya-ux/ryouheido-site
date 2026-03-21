@@ -1056,19 +1056,19 @@
           <input type="hidden" name="redirect" value="false">
           <div class="form-group">
             <label>お名前 <span class="required">必須</span></label>
-            <input type="text" name="お名前" placeholder="山田 花子" required>
+            <input type="text" name="name" placeholder="山田 花子" required>
           </div>
           <div class="form-group">
             <label>メールアドレス <span class="required">必須</span></label>
-            <input type="email" name="メールアドレス" placeholder="info@example.com" required>
+            <input type="email" name="email" placeholder="info@example.com" required>
           </div>
           <div class="form-group">
             <label>電話番号</label>
-            <input type="tel" name="電話番号" placeholder="0573-XX-XXXX">
+            <input type="tel" name="phone" placeholder="0573-XX-XXXX">
           </div>
           <div class="form-group">
             <label>お問い合わせ種別 <span class="required">必須</span></label>
-            <select name="お問い合わせ種別" required>
+            <select name="category" required>
               <option value="">選択してください</option>
               <option>商品・ギフトについて</option>
               <option>通販・配送について</option>
@@ -1081,11 +1081,10 @@
           </div>
           <div class="form-group">
             <label>メッセージ <span class="required">必須</span></label>
-            <textarea name="メッセージ" rows="6" placeholder="ご質問・ご要望をご記入ください" required></textarea>
+            <textarea name="message" rows="6" placeholder="ご質問・ご要望をご記入ください" required></textarea>
           </div>
           <!-- スパム対策（honeypot） -->
-          <input type="text" name="_gotcha" style="display:none">
-          <input type="hidden" name="_language" value="ja">
+          <input type="text" name="botcheck" style="display:none">
           <button type="submit" class="btn-primary full-width" id="submitBtn">送信する</button>
           <p class="form-success" id="formSuccess" style="display:none;">
             お問い合わせありがとうございます。担当者より折り返しご連絡いたします。

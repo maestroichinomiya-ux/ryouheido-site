@@ -93,9 +93,25 @@ if (contactForm) {
     btn.textContent = '送信中...';
     btn.disabled = true;
 
-    // フォームデータをJSONに変換
     const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData.entries());
+
+    // 英語キーを日本語ラベルに変換
+    const labelMap = {
+      name:     'お名前',
+      email:    'メールアドレス',
+      phone:    '電話番号',
+      category: 'お問い合わせ種別',
+      message:  'メッセージ'
+    };
+    const data = {
+      access_key: '2d2c5cdc-effc-48ab-9c24-044b69eb235d',
+      subject:    '【良平堂】お問い合わせが届きました',
+      from_name:  '恵那栗工房 良平堂 公式サイト',
+    };
+    for (const [key, val] of formData.entries()) {
+      const label = labelMap[key] || key;
+      data[label] = val;
+    }
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
