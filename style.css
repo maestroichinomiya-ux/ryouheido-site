@@ -2440,3 +2440,169 @@ a.online-link-card p {
   .ec-banner-btns { flex-direction: column; }
   .ec-btn { min-width: 100%; }
 }
+
+/* ===== フォーム送信完了メッセージ ===== */
+.form-success {
+  text-align: center;
+  padding: 24px;
+  background: rgba(58,82,56,0.08);
+  border: 1px solid rgba(58,82,56,0.2);
+  border-radius: var(--radius-sm);
+  color: var(--clr-green);
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  margin-top: 16px;
+}
+
+/* =============================================
+   良平堂 アニメーション CSS
+   ============================================= */
+
+/* ===== 受賞バー横スクロール ===== */
+@keyframes awardsScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===== ページ切替 ===== */
+.page {
+  animation: none;
+}
+
+/* ===== セクション見出し 下線アニメーション ===== */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+.section-title.centered,
+.section-title.light {
+  display: block;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--clr-kuri-light), transparent);
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.section-title.centered::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.section-title.title-visible::after {
+  width: 80px;
+}
+
+/* ===== ヒーローテキスト 文字フェード ===== */
+.hero-title span {
+  display: block;
+  overflow: hidden;
+}
+.hero-title span::after {
+  content: none;
+}
+
+/* ===== ボタン シャイン効果 ===== */
+.shine-btn {
+  position: relative;
+  overflow: hidden;
+}
+.shine-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.18) 50%,
+    transparent 100%
+  );
+  transition: none;
+  pointer-events: none;
+}
+.shine-btn:hover::after {
+  left: 150%;
+  transition: left 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ===== 商品カード画像ズーム ===== */
+.product-card-img,
+.product-item-img,
+.top-exp-card-photo,
+.ev-photo-block {
+  overflow: hidden;
+}
+.product-card:hover .product-card-img img,
+.product-item:hover .product-item-img img {
+  transform: scale(1.05);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.product-card-img img,
+.product-item-img img {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ===== ヒーロースクロール ===== */
+.hero-scroll {
+  animation: heroScrollBob 2.5s ease-in-out infinite;
+}
+@keyframes heroScrollBob {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+  50%       { transform: translateX(-50%) translateY(6px); opacity: 1; }
+}
+
+/* ===== ナビリンク下線アニメーション ===== */
+.main-nav a:not(.nav-contact):not(.nav-buy) {
+  position: relative;
+}
+.main-nav a:not(.nav-contact):not(.nav-buy)::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--clr-kuri);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.main-nav a:not(.nav-contact):not(.nav-buy):hover::after {
+  width: 80%;
+  left: 10%;
+}
+.header-transparent .main-nav a:not(.nav-contact):not(.nav-buy)::after {
+  background: rgba(255,255,255,0.7);
+}
+
+/* ===== カフェバナー 奥行きパララックス風 ===== */
+.cafe-banner-photo img {
+  transition: transform 0.1s linear;
+}
+
+/* ===== フッター フェードイン ===== */
+.site-footer {
+  opacity: 0;
+  animation: footerFade 1s ease 0.3s forwards;
+}
+@keyframes footerFade {
+  to { opacity: 1; }
+}
+
+/* ===== ロゴ hover ===== */
+.logo {
+  transition: opacity 0.4s ease;
+}
+
+/* ===== 栗拾い・体験写真 ホバー ===== */
+.ev-photo-block img {
+  transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.ev-photo-block:hover img {
+  transform: scale(1.03);
+}

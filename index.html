@@ -924,22 +924,25 @@
             <p>ギフト・のし対応・法人注文・大量注文のご相談もお気軽にどうぞ。</p>
           </div>
         </div>
-        <form class="contact-form" onsubmit="return false;">
+        <form class="contact-form"
+              action="https://formspree.io/f/mbdzbeaz"
+              method="POST"
+              id="contactForm">
           <div class="form-group">
             <label>お名前 <span class="required">必須</span></label>
-            <input type="text" placeholder="山田 花子">
+            <input type="text" name="お名前" placeholder="山田 花子" required>
           </div>
           <div class="form-group">
             <label>メールアドレス <span class="required">必須</span></label>
-            <input type="email" placeholder="info@example.com">
+            <input type="email" name="メールアドレス" placeholder="info@example.com" required>
           </div>
           <div class="form-group">
             <label>電話番号</label>
-            <input type="tel" placeholder="0573-XX-XXXX">
+            <input type="tel" name="電話番号" placeholder="0573-XX-XXXX">
           </div>
           <div class="form-group">
             <label>お問い合わせ種別 <span class="required">必須</span></label>
-            <select>
+            <select name="お問い合わせ種別" required>
               <option value="">選択してください</option>
               <option>商品・ギフトについて</option>
               <option>通販・配送について</option>
@@ -952,9 +955,15 @@
           </div>
           <div class="form-group">
             <label>メッセージ <span class="required">必須</span></label>
-            <textarea rows="6" placeholder="ご質問・ご要望をご記入ください"></textarea>
+            <textarea name="メッセージ" rows="6" placeholder="ご質問・ご要望をご記入ください" required></textarea>
           </div>
-          <button type="submit" class="btn-primary full-width">送信する</button>
+          <!-- スパム対策（honeypot） -->
+          <input type="text" name="_gotcha" style="display:none">
+          <input type="hidden" name="_language" value="ja">
+          <button type="submit" class="btn-primary full-width" id="submitBtn">送信する</button>
+          <p class="form-success" id="formSuccess" style="display:none;">
+            お問い合わせありがとうございます。担当者より折り返しご連絡いたします。
+          </p>
         </form>
       </div>
     </div>
