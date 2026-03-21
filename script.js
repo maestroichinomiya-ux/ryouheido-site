@@ -93,11 +93,18 @@ if (contactForm) {
     btn.textContent = '送信中...';
     btn.disabled = true;
 
-    const data = new FormData(contactForm);
+    // フォームデータをJSONに変換
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData.entries());
+
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: data
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
       });
       const json = await res.json();
       if (json.success) {
