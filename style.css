@@ -2909,6 +2909,7 @@ a.online-link-card p {
 }
 .cafe-exp-body {
   padding: 28px 24px;
+  color: #1a1208;
 }
 .cafe-exp-header {
   display: flex;
@@ -2919,7 +2920,7 @@ a.online-link-card p {
 .cafe-exp-header h3 {
   font-size: 18px;
   font-weight: 500;
-  color: var(--clr-ink);
+  color: #1a1208 !important;
   letter-spacing: 0.06em;
   margin: 0;
 }
@@ -2943,7 +2944,7 @@ a.online-link-card p {
 }
 .cafe-exp-body > p {
   font-size: 13px;
-  color: var(--clr-ink-light);
+  color: #6e6650 !important;
   line-height: 1.9;
   margin-bottom: 16px;
 }
@@ -2982,7 +2983,7 @@ a.online-link-card p {
 }
 .meta-v {
   font-size: 13px;
-  color: var(--clr-ink);
+  color: #1a1208 !important;
   font-weight: 600;
   letter-spacing: 0.04em;
 }
