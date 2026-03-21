@@ -84,7 +84,7 @@ function switchShop(id, btn) {
   btn.classList.add('active');
 }
 
-// お問い合わせフォーム送信処理（Formspree）
+// お問い合わせフォーム送信処理（Web3Forms）
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', async function(e) {
@@ -95,12 +95,12 @@ if (contactForm) {
 
     const data = new FormData(contactForm);
     try {
-      const res = await fetch(contactForm.action, {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
+        body: data
       });
-      if (res.ok) {
+      const json = await res.json();
+      if (json.success) {
         contactForm.reset();
         btn.style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
